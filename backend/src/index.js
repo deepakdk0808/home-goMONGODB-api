@@ -15,7 +15,8 @@ app.use("/properties",controller)
 
 const connect=require("./connection/connect")
 
-const port=process.env.PORT || 2345
+const port=process.env.PORT
+// console.log(process.env) 
 
 app.listen(port,async()=>{
     try {
