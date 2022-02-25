@@ -6,7 +6,9 @@ const express=require("express")
 const app=express()
 
 app.use(express.json())
+const {body} = require("express-validator");
 
+const {login, register} = require("./controllers/auth.controller");
 const controller=require("./controllers/property.controller")
 
 app.use("/bookTheProperty",controller)
@@ -26,4 +28,13 @@ app.listen(port,async()=>{
     } catch (e) {
         console.log(e.message)
     }
-})
+});
+
+app.post("/login",
+body("email").notEmpty().isEmail(),
+body("password").notEmpty(), login);
+
+app.post("/register", 
+body("name").notEmpty().isLength({min:3, max:30}),
+body("password").notEmpty().isLength({min:6, max:14}),
+body("email").notEmpty().isEmail(), register);
