@@ -15,7 +15,16 @@ const bookingSchema=new mongoose.Schema({
         cardNo:{type:Number,required:true,unique:true},
         CVV:{type:Number,required:true},
         expiryDate:{type:Date,required:true}
+    },
+
+    stayDetails:{
+        checkIn:{type:Date,required:true},
+        checkOut:{type:Date,required:true},
+        noOfAdults:{type:Number,required:true},
+        noOfChilds:{type:Number,required:true}
     }
+
+   
     
 },{
     versionKey:false,
