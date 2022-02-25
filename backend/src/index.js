@@ -7,13 +7,13 @@ const app=express()
 
 app.use(express.json())
 
-const controller=require("../controllers/property.controller")
+const controller=require("./controllers/property.controller")
 
 app.use("/bookTheProperty",controller)
 
 app.use("/properties",controller)
 
-const connect=require("../connection/connect")
+const connect=require("./connection/connect")
 
 const port=process.env.PORT || 2345
 
