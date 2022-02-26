@@ -57,8 +57,6 @@
             <label>Images:</label> <br> <input type="text" class="img4"><br>
             <label>Images:</label> <br> <input type="text" class="img5"><br>
 
-
-          
             <button >Submit</button>
         </form>
     </div>
@@ -153,7 +151,7 @@
             console.log(error)
         }
 
-        let api=`https://home2gowebapi.herokuapp.com/properties`
+        let api=`https://home2gowebapi.herokuapp.com/properties/postData`
 
         let response=await fetch(api,{
             method:"POST",
@@ -166,6 +164,7 @@
         let data=await response.json()
         console.log("data",data)
 
+         alert("Successfully added!!");
 
 
 
@@ -176,13 +175,10 @@
 
 
 
-    //  alert("Successfully added!!");
 
-    //  document.querySelector('.name').value = "";
-    //  document.querySelector('.feature').value = "";
-    //  document.querySelector('.location').value = "";
-    //  document.querySelector('.price').value = "";
-    //  document.querySelector('.img1').value = "";
+    
+
+   
 
     }
 </script>
