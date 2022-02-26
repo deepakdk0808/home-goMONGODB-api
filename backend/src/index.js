@@ -9,7 +9,7 @@ app.use(express.json())
 
 const controller=require("./controllers/property.controller")
 
-app.use("/bookTheProperty",controller)
+// app.use("/bookTheProperty",controller)
 
 app.use("/properties",controller)
 
