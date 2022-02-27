@@ -9,7 +9,7 @@ const bookingSchema=new mongoose.Schema({
         lastName:{type:String,required:true},
         email:{type:String,required:true},
         address:{type:String,required:true},
-        nationality:{type:String,required:true}
+        nationality:{type:String,required:false,default:"India"}
     },
     paymentDetails:{
         cardNo:{type:Number,required:true,unique:true},
