@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 const {validationResult} = require("express-validator");
 
 const newToken = (user) => {
-    return jwt.sign({user}, process.env.JWT_SECRET_KEY);
+    return jwt.sign({user},"secret");
 }
 
 const login = async (req, res) => {
